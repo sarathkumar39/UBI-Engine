@@ -1,0 +1,17 @@
+{
+  "base_premium": 30000,
+  "risk_bands": [
+    {"min_score": 81, "adj_pct": -20},
+    {"min_score": 61, "adj_pct": 0},
+    {"min_score": 41, "adj_pct": 15},
+    {"min_score": 0, "adj_pct": 30}
+  ],
+  "mileage_bands": [
+    {"max_km": 1000, "adj_pct": -5},
+    {"max_km": 2000, "adj_pct": 0},
+    {"max_km": 999999, "adj_pct": 10}
+  ],
+  "ev_discount_pct": 5,
+  "safe_driving_discount_pct": 5,
+  "tax_pct": 18
+}

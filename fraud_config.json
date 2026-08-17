@@ -1,0 +1,8 @@
+{
+  "high_speed_threshold_kmh": 160,
+  "short_trip_duration_sec": 120,
+  "short_trip_events": 3,
+  "rapid_consecutive_gap_sec": 60,
+  "rapid_consecutive_min_distance_km": 1.0,
+  "max_implied_speed_kmh": 220
+}

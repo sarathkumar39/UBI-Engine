@@ -1,0 +1,5 @@
+driver_id,device_id,trip_id,trip_type,start_ts,end_ts,duration_sec,distance_km,avg_speed_kmh,hard_brakes,rapid_accels,start_hour,weekday,start_lat,start_lon,end_lat,end_lon,risk_score,label
+"driver_001","dev_driver_001_01","TRIP-NORM-1","commute","2026-08-14T08:00:00","2026-08-14T08:30:00",1800,30.0,60.0,0,0,8,4,12.971600,77.594600,12.984000,77.610000,0.02,0
+"driver_001","dev_driver_001_01","TRIP-NORM-2","commute","2026-08-14T09:00:00","2026-08-14T09:20:00",1200,20.0,60.0,1,0,9,4,12.984000,77.610000,13.000000,77.620000,0.12,0
+"driver_002","dev_driver_002_01","TRIP-IMPOSS-1","long_haul","2026-08-14T10:00:00","2026-08-14T10:05:00",300,200.0,400.0,0,0,10,4,19.075983,72.877656,28.613939,77.209021,0.99,1
+"driver_003","dev_driver_003_01","TRIP-NORM-3","commute","2026-08-14T11:30:00","2026-08-14T11:50:00",1200,40.0,120.0,0,1,11,4,13.082680,80.270718,13.120000,80.300000,0.22,0

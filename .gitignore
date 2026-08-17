@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.egg
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Artifacts and logs
+artifacts/
+artifacts/invoices/
+logs/
+
+# Streamlit runtime
+.streamlit/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Optional: ignore large generated CSVs
+data/trips.csv

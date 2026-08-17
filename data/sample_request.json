@@ -1,0 +1,24 @@
+{
+  "trips": [
+    {
+      "driver_id": "driver_001",
+      "duration_sec": 600,
+      "distance_km": 10.5,
+      "avg_speed_kmh": 63.0,
+      "hard_brakes": 0,
+      "rapid_accels": 0,
+      "start_hour": 14,
+      "weekday": 2
+    },
+    {
+      "driver_id": "driver_002",
+      "duration_sec": 900,
+      "distance_km": 55.0,
+      "avg_speed_kmh": 220.0,
+      "hard_brakes": 4,
+      "rapid_accels": 3,
+      "start_hour": 23,
+      "weekday": 5
+    }
+  ]
+}
