@@ -146,7 +146,7 @@ The PoC uses a trained ML model to estimate the probability associated with the 
 
 The scoring API accepts trip information and returns a probability for each trip.
 
-For pricing, the model probability is converted into a 0–100 safety-oriented score where a higher score represents safer behavior.
+For pricing, the model probability is converted into a 0–100 risk score where a higher score represents lower risk behavior.
 
 This enables driving behavior to become an input into insurance pricing rather than relying solely on static assumptions.
 
@@ -256,7 +256,7 @@ ML model evaluates risk
         ↓
 Fraud rules identify suspicious patterns
         ↓
-Driver risk/safety score determined
+Driver risk score determined
         ↓
 UBI premium calculated
         ↓

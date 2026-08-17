@@ -156,6 +156,12 @@ def prepare_features_from_row(row):
 
 
 def score_trip_with_model(model, row):
+    """Return raw probability and a UI risk score mapped to 0-100.
+
+    The ML model gives probability where higher = riskier. For the demo dashboard and
+    pricing logic, we invert that into a risk score where higher = safer/lower risk so
+    the premium adjustments are easier to explain to business users.
+    """
     X = prepare_features_from_row(row)
     prob = float(model.predict_proba(X)[0, 1])
     risk_score = round((1.0 - prob) * 100.0, 2)
@@ -221,7 +227,10 @@ else:
             'weekday': int(datetime.now().weekday()),
         }
         prob_u, risk_score_u = score_trip_with_model(model, trip_row)
-        st.markdown(f"**Inferred risk probability:** {prob_u:.4f} — **Risk score:** {risk_score_u:.2f}")
+        st.markdown(
+            f"**Risk probability:** {prob_u:.4f} ({prob_u * 100:.1f}%) — "
+            f"**Safety score:** {prob_u * 100:.2f}"
+        )
         # compute premium
         from pricing import compute_premium
         breakdown_u = compute_premium(risk_score=risk_score_u, monthly_mileage=float(monthly_mileage_u), is_ev=bool(is_ev_u), safe_driver=bool(safe_driver_u))
@@ -597,7 +606,7 @@ else:
             if risk_col:
                 render_card('Avg risk score', f"{sample_df[risk_col].mean():.2f}")
             else:
-                render_card('Avg risk score', 'N/A')
+                    render_card('Avg risk score', 'N/A')
         with pcols[2]:
             if 'premium_total' in sample_df.columns:
                 render_card('Avg premium', format_currency(sample_df['premium_total'].mean()))
@@ -640,7 +649,7 @@ else:
     with a:
         st.markdown(f'<div class="metric-card"><div class="metric-label">Risk probability</div><div class="metric-value">{prob:.4f}</div></div>', unsafe_allow_html=True)
     with b:
-        st.markdown(f'<div class="metric-card"><div class="metric-label">Risk score</div><div class="metric-value">{risk_score:.2f}</div></div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="metric-card"><div class="metric-label">Safety score</div><div class="metric-value">{risk_score:.2f}</div></div>', unsafe_allow_html=True)
 
     st.write('Feature inputs')
     st.table(X.T)
